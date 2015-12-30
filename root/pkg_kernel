@@ -1,0 +1,65 @@
+#!/bin/sh
+
+# config
+OVERLAY="/usr/local/src/gekis-playground.git"
+
+# function
+function package_kernel()
+{
+	local version="${PWD}"
+
+	# strip to version (gentoo-sources)
+	version="${version%-*}"
+	version="${version#*-}"
+
+	local cpu_name="${0#*-}"
+	local cpu_type="${cpu_name%_*}"
+	local cpu_arch="${cpu_name#*_}"
+
+	mount /boot/
+
+	source /etc/portage/make.conf
+
+	cp arch/x86/boot/bzImage /boot/kernel-${version}-${cpu_type}
+	cp .config /boot/config-${version}-${cpu_type}
+
+	tar cJf ${DISTDIR}/${cpu_type}-kernel-bin${cpu_arch}-${version}.tar.xz \
+		/boot/config-${version}-${cpu_type} \
+		/boot/kernel-${version}-${cpu_type} \
+		/lib/modules/${version}-gentoo/ \
+		--exclude=video
+
+	if [ -d ${OVERLAY}/sys-kernel/${cpu_type}-kernel-bin${cpu_arch} ] &&
+	   [ -f ${OVERLAY}/sys-kernel/${cpu_type}-kernel-bin${cpu_arch}/${cpu_type}-kernel-bin${cpu_arch}-${version}.ebuild ]
+	then
+		sed "/DIST ${cpu_type}-kernel-bin${cpu_arch}-${version}/d" \
+			-i ${OVERLAY}/sys-kernel/${cpu_type}-kernel-bin${cpu_arch}/Manifest
+
+		ebuild ${OVERLAY}/sys-kernel/${cpu_type}-kernel-bin${cpu_arch}/${cpu_type}-kernel-bin${cpu_arch}-${version}.ebuild digest
+
+		emerge --buildpkgonly =sys-kernel/${cpu_type}-kernel-bin${cpu_arch}-${version}
+	else
+		echo "overlay not set up: create package sys-kernel/${cpu_type}-kernel-bin${cpu_arch}"
+	fi
+
+	umount /boot/
+}
+
+if [ "${0}" == "$(realpath ${0})" ]
+then
+	echo "do not execute this script directly!"
+	echo "use: ${0}-cputype_cpuarch (i.e.: ${0}-intel_64)"
+
+	exit 1
+fi
+
+if [ "${PWD}" != ${PWD#*/usr/src/linux-} ]
+then
+	package_kernel
+else
+	echo "current working directory: no kernel source tree?!"
+
+	exit 1
+fi
+
+exit 0

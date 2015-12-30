@@ -6,11 +6,18 @@ DISPLAY=":0"
 # function
 function select_display()
 {
-	local mode="$(/bin/cat /sys/class/drm/card0-HDMI-A-1/status)"
+	local mode="default"
+
+	# add tests for other cards and combinations
+	if [ "connected" == "$(/bin/cat /sys/class/drm/card0-HDMI-A-1/status)" ]
+	then
+		mode="hdmi"
+	#elif [ other card(s) ]
+	fi
 
 	case "${mode}"
 	in
-	"connected")
+	"hdmi")
 		/usr/bin/xrandr --output HDMI1 --auto --output LVDS1 --off
 		/bin/su ${USER} -c "/usr/bin/pacmd set-card-profile alsa_card.pci-0000_00_1b.0 output:hdmi-stereo+input:analog-stereo"
 		;;

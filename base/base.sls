@@ -3,26 +3,14 @@
     - source: salt://etc
     - include_empty: True
 
+/etc/cron.daily/salt:
+  file.managed:
+    - source: salt://etc/cron.daily/salt
+    - mode: 755
+
 /etc/mtab:
   file.symlink:
     - target: /proc/self/mounts
-
-/etc/portage/make.profile:
-  file.symlink:
-    - target: ../../usr/portage/profiles/default/linux/amd64/13.0
-
-/etc/cron.daily/salt:
-  file.managed:
-    - mode: 755
-
-/lib64:
-  file.recurse:
-    - source: salt://lib64
-    - include_empty: True
-
-/lib64/udev/display.sh:
-  file.managed:
-    - mode: 755
 
 /usr/portage/distfiles:
   file.directory:

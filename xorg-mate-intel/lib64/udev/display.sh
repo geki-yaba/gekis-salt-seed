@@ -18,11 +18,37 @@ function select_display()
 	case "${mode}"
 	in
 	"hdmi")
-		/usr/bin/xrandr --output LVDS1 --off --output HDMI1 --auto --primary
+		while [ "disabled" == "$(/bin/cat /sys/class/drm/card0-HDMI-A-1/enabled)" ]
+		do
+			/usr/bin/xrandr --output HDMI1 --auto --primary
+
+			sleep 2
+		done
+
+		while [ "enabled" == "$(/bin/cat /sys/class/drm/card0-LVDS-1/enabled)" ]
+		do
+			/usr/bin/xrandr --output LVDS1 --off
+
+			sleep 2
+		done
+
 		/bin/su ${USER} -c "/usr/bin/pacmd set-card-profile alsa_card.pci-0000_00_1b.0 output:hdmi-stereo+input:analog-stereo"
 		;;
 	*)
-		/usr/bin/xrandr --output HDMI1 --off --output LVDS1 --auto --primary
+		while [ "disabled" == "$(/bin/cat /sys/class/drm/card0-LVDS-1/enabled)" ]
+		do
+			/usr/bin/xrandr --output LVDS1 --auto --primary
+
+			sleep 2
+		done
+
+		while [ "enabled" == "$(/bin/cat /sys/class/drm/card0-HDMI-A-1/enabled)" ]
+		do
+			/usr/bin/xrandr --output HDMI1 --off
+
+			sleep 2
+		done
+
 		/bin/su ${USER} -c "/usr/bin/pacmd set-card-profile alsa_card.pci-0000_00_1b.0 output:analog-stereo+input:analog-stereo"
 		;;
 	esac

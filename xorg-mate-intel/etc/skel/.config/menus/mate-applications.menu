@@ -1,0 +1,124 @@
+<!DOCTYPE Menu
+  PUBLIC '-//freedesktop//DTD Menu 1.0//EN'
+  'http://standards.freedesktop.org/menu-spec/menu-1.0.dtd'>
+<Menu>
+	<Name>Applications</Name>
+	<MergeFile type="parent">/etc/xdg/menus/mate-applications.menu</MergeFile>
+	<Menu>
+		<Name>Accessories</Name>
+		<Layout>
+			<Merge type="menus"/>
+			<Filename>pluma.desktop</Filename>
+			<Filename>mate-screenshot.desktop</Filename>
+			<Filename>engrampa.desktop</Filename>
+			<Filename>galculator.desktop</Filename>
+			<Filename>solaar.desktop</Filename>
+			<Filename>mate-search-tool.desktop</Filename>
+			<Filename>mate-about.desktop</Filename>
+			<Merge type="files"/>
+		</Layout>
+		<Exclude>
+			<Filename>engrampa.desktop</Filename>
+		</Exclude>
+		<AppDir>/home/die/.local/share/applications</AppDir>
+		<Exclude>
+			<Filename>mate-search-tool.desktop</Filename>
+		</Exclude>
+	</Menu>
+	<Menu>
+		<Name>Internet</Name>
+		<Layout>
+			<Merge type="menus"/>
+			<Filename>claws-mail.desktop</Filename>
+			<Filename>firefox.desktop</Filename>
+			<Filename>deluge.desktop</Filename>
+			<Filename>teamviewer11-teamviewer-11.desktop</Filename>
+			<Merge type="files"/>
+		</Layout>
+		<Exclude>
+			<Filename>teamviewer11-teamviewer-11.desktop</Filename>
+		</Exclude>
+		<AppDir>/home/die/.local/share/applications</AppDir>
+	</Menu>
+	<Menu>
+		<Name>Office</Name>
+		<Exclude>
+			<Filename>libreoffice-base.desktop</Filename>
+		</Exclude>
+		<AppDir>/home/die/.local/share/applications</AppDir>
+		<Layout>
+			<Merge type="menus"/>
+			<Filename>libreoffice-writer.desktop</Filename>
+			<Filename>libreoffice-calc.desktop</Filename>
+			<Separator/>
+			<Filename>libreoffice-startcenter.desktop</Filename>
+			<Filename>libreoffice-impress.desktop</Filename>
+			<Filename>libreoffice-draw.desktop</Filename>
+			<Filename>libreoffice-math.desktop</Filename>
+			<Filename>libreoffice-base.desktop</Filename>
+			<Separator/>
+			<Filename>atril.desktop</Filename>
+			<Filename>mate-dictionary.desktop</Filename>
+			<Merge type="files"/>
+		</Layout>
+	</Menu>
+	<Menu>
+		<Name>Development</Name>
+		<Exclude>
+			<Filename>sandbox.desktop</Filename>
+		</Exclude>
+		<AppDir>/home/die/.local/share/applications</AppDir>
+	</Menu>
+	<Menu>
+		<Name>Multimedia</Name>
+		<Exclude>
+			<Filename>mate-volume-control.desktop</Filename>
+		</Exclude>
+		<AppDir>/home/die/.local/share/applications</AppDir>
+		<Exclude>
+			<Filename>vlc.desktop</Filename>
+		</Exclude>
+	</Menu>
+	<Menu>
+		<Name>System</Name>
+		<Exclude>
+			<Filename>caja-browser.desktop</Filename>
+		</Exclude>
+		<AppDir>/home/die/.local/share/applications</AppDir>
+		<Exclude>
+			<Filename>mate-terminal.desktop</Filename>
+		</Exclude>
+		<Exclude>
+			<Filename>mate-panel.desktop</Filename>
+		</Exclude>
+		<Layout>
+			<Merge type="menus"/>
+			<Filename>caja-browser.desktop</Filename>
+			<Filename>ca.desrt.dconf-editor.desktop</Filename>
+			<Filename>htop.desktop</Filename>
+			<Separator/>
+			<Filename>mate-panel.desktop</Filename>
+			<Filename>mate-system-log.desktop</Filename>
+			<Filename>mate-disk-usage-analyzer.desktop</Filename>
+			<Filename>mate-system-monitor.desktop</Filename>
+			<Filename>mate-power-statistics.desktop</Filename>
+			<Filename>mate-terminal.desktop</Filename>
+			<Filename>mate-network-scheme.desktop</Filename>
+			<Filename>caja-home.desktop</Filename>
+			<Filename>caja-computer.desktop</Filename>
+			<Merge type="files"/>
+		</Layout>
+	</Menu>
+	<Menu>
+		<Name>Graphics</Name>
+		<Layout>
+			<Merge type="menus"/>
+			<Filename>eom.desktop</Filename>
+			<Filename>zzz-gimp.desktop</Filename>
+			<Separator/>
+			<Filename>libreoffice-draw.desktop</Filename>
+			<Filename>mate-color-select.desktop</Filename>
+			<Merge type="files"/>
+		</Layout>
+	</Menu>
+</Menu>

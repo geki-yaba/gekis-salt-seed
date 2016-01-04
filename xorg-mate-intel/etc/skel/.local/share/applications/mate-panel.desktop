@@ -1,0 +1,21 @@
+[Desktop Entry]
+Categories=GTK;System;Core;
+Comment=Launch other applications and provide various utilities to manage windows, show the time, etc.
+Comment[de]=Startet andere Anwendungen und liefert verschiedene Werkzeuge zum Verwalten von Fenstern, dem Anzeigen der Zeit usw.
+Exec=mate-panel
+Icon=mate-panel
+Name=Panel
+Name[de]=Leiste
+NoDisplay=false
+OnlyShowIn=MATE;
+StartupNotify=true
+Terminal=false
+Type=Application
+X-MATE-AutoRestart=true
+X-MATE-Autostart-Notify=true
+X-MATE-Autostart-Phase=Panel
+X-MATE-Bugzilla-Bugzilla=MATE
+X-MATE-Bugzilla-Component=general
+X-MATE-Bugzilla-Product=mate-panel
+X-MATE-Bugzilla-Version=1.12.1
+X-MATE-Provides=panel

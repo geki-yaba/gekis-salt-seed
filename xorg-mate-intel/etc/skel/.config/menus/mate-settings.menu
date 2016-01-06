@@ -1,0 +1,20 @@
+<!DOCTYPE Menu
+  PUBLIC '-//freedesktop//DTD Menu 1.0//EN'
+  'http://standards.freedesktop.org/menu-spec/menu-1.0.dtd'>
+<Menu>
+	<Name>Desktop</Name>
+	<MergeFile type="parent">/etc/xdg/menus/mate-settings.menu</MergeFile>
+	<Menu>
+		<Name>Preferences</Name>
+		<Menu>
+			<Name>Look and Feel</Name>
+			<Exclude>
+				<Filename>qtconfig-qtgui-4.desktop</Filename>
+			</Exclude>
+			<AppDir>~/.local/share/applications</AppDir>
+			<Exclude>
+				<Filename>mate-conf-import.desktop</Filename>
+			</Exclude>
+		</Menu>
+	</Menu>
+</Menu>

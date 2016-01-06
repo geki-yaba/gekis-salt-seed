@@ -20,7 +20,7 @@
 		<Exclude>
 			<Filename>engrampa.desktop</Filename>
 		</Exclude>
-		<AppDir>/home/die/.local/share/applications</AppDir>
+		<AppDir>~/.local/share/applications</AppDir>
 		<Exclude>
 			<Filename>mate-search-tool.desktop</Filename>
 		</Exclude>
@@ -38,14 +38,14 @@
 		<Exclude>
 			<Filename>teamviewer11-teamviewer-11.desktop</Filename>
 		</Exclude>
-		<AppDir>/home/die/.local/share/applications</AppDir>
+		<AppDir>~/.local/share/applications</AppDir>
 	</Menu>
 	<Menu>
 		<Name>Office</Name>
 		<Exclude>
 			<Filename>libreoffice-base.desktop</Filename>
 		</Exclude>
-		<AppDir>/home/die/.local/share/applications</AppDir>
+		<AppDir>~/.local/share/applications</AppDir>
 		<Layout>
 			<Merge type="menus"/>
 			<Filename>libreoffice-writer.desktop</Filename>
@@ -67,14 +67,14 @@
 		<Exclude>
 			<Filename>sandbox.desktop</Filename>
 		</Exclude>
-		<AppDir>/home/die/.local/share/applications</AppDir>
+		<AppDir>~/.local/share/applications</AppDir>
 	</Menu>
 	<Menu>
 		<Name>Multimedia</Name>
 		<Exclude>
 			<Filename>mate-volume-control.desktop</Filename>
 		</Exclude>
-		<AppDir>/home/die/.local/share/applications</AppDir>
+		<AppDir>~/.local/share/applications</AppDir>
 		<Exclude>
 			<Filename>vlc.desktop</Filename>
 		</Exclude>
@@ -84,7 +84,7 @@
 		<Exclude>
 			<Filename>caja-browser.desktop</Filename>
 		</Exclude>
-		<AppDir>/home/die/.local/share/applications</AppDir>
+		<AppDir>~/.local/share/applications</AppDir>
 		<Exclude>
 			<Filename>mate-terminal.desktop</Filename>
 		</Exclude>

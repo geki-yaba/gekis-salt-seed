@@ -16,5 +16,10 @@ fi
 
 
 # Put your fun stuff here.
+export LANG=de_DE.utf8
+export LC_ALL=de_DE.utf8
+
+export HISTCONTROL=erasedups
+
 export QT_SELECT=qt5
 export QT_QPA_PLATFORMTHEME=qt5ct

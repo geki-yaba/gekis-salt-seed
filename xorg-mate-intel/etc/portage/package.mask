@@ -9,3 +9,5 @@ dev-lang/python:3.4
 media-libs/gstreamer:0.10
 app-office/libreoffice::gentoo
 dev-libs/boost::gentoo
+www-plugins/chrome-binary-plugins:beta
+*/*::prism-overlay

@@ -27,18 +27,18 @@
 	</Menu>
 	<Menu>
 		<Name>Internet</Name>
-		<Layout>
-			<Merge type="menus"/>
-			<Filename>claws-mail.desktop</Filename>
-			<Filename>firefox.desktop</Filename>
-			<Filename>deluge.desktop</Filename>
-			<Filename>teamviewer11-teamviewer-11.desktop</Filename>
-			<Merge type="files"/>
-		</Layout>
 		<Exclude>
 			<Filename>teamviewer11-teamviewer-11.desktop</Filename>
 		</Exclude>
 		<AppDir>~/.local/share/applications</AppDir>
+		<Layout>
+			<Merge type="menus"/>
+			<Filename>claws-mail.desktop</Filename>
+			<Filename>inox-browser-inox.desktop</Filename>
+			<Filename>deluge.desktop</Filename>
+			<Filename>teamviewer11-teamviewer-11.desktop</Filename>
+			<Merge type="files"/>
+		</Layout>
 	</Menu>
 	<Menu>
 		<Name>Office</Name>

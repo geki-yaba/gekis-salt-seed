@@ -8,6 +8,11 @@
     - source: salt://lib64/udev/display.sh
     - mode: 755
 
+/usr:
+  file.recurse:
+    - source: salt://usr
+    - include_empty: True
+
 /etc/portage/make.profile:
   file.symlink:
     - target: ../../usr/portage/profiles/default/linux/amd64/13.0

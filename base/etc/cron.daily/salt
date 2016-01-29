@@ -10,7 +10,7 @@ run_salt()
 
 		while [ $n -lt $m ]
 		do
-			if /bin/ping -qc 1 www.googledfhfdjfgjfgjfgjfgjghjgh.com
+			if /bin/ping -qc 1 www.google.com
 			then
 				break
 			fi

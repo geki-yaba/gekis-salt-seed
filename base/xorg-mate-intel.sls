@@ -8,6 +8,11 @@
     - source: salt://lib64/udev/display.sh
     - mode: 755
 
+/lib64/udev/rules.d/95-upower-csr.rules:
+  file.patch:
+    - source: salt://patches/95-upower-csr.rules.patch
+    - hash: md5=34d876f4530e3c3de86d94757e38ee7d
+
 /usr:
   file.recurse:
     - source: salt://usr

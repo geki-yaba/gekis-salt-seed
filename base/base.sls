@@ -16,6 +16,10 @@
   file.directory:
     - makedirs: True
 
+emaint:
+  cmd.run:
+    - name: emaint sync -a
+
 emerge-depclean:
   cmd.run:
     - name: emerge --depclean

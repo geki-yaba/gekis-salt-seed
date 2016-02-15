@@ -22,7 +22,15 @@ run_salt()
 
 		if [ $n -lt $m ]
 		then
+			# deny shutdown/reboot/...
+			touch /etc/shutdown.allow
+			cp /etc/dbus-1/system.d/org.freedesktop.PolicyKit1.conf{.deny,}
+
 			/usr/bin/salt-call state.highstate
+
+			# allow shutdown/reboot/...
+			cp /etc/dbus-1/system.d/org.freedesktop.PolicyKit1.conf{.allow,}
+			rm /etc/shutdown.allow
 		fi
 	fi
 }

@@ -25,6 +25,9 @@ run_salt()
 			# /etc/inittab: feature 'shutdown -a'
 			# policykit: deny access to its D-Bus connection
 
+			/usr/bin/zenity --warning \
+				--text="Grüße Dich,\n\n\ndas System wird gerade aktualisiert.\n\n\nDeshalb ist das Herunterfahren, Neustarten, etc. zur Zeit nicht erlaubt."
+
 			# deny shutdown/reboot/...
 			touch /etc/shutdown.allow
 			cp /etc/dbus-1/system.d/org.freedesktop.PolicyKit1.conf{.deny,}

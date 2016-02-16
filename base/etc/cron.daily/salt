@@ -22,6 +22,9 @@ run_salt()
 
 		if [ $n -lt $m ]
 		then
+			# /etc/inittab: feature 'shutdown -a'
+			# policykit: deny access to its D-Bus connection
+
 			# deny shutdown/reboot/...
 			touch /etc/shutdown.allow
 			cp /etc/dbus-1/system.d/org.freedesktop.PolicyKit1.conf{.deny,}

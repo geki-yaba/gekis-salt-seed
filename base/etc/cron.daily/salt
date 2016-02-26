@@ -1,6 +1,25 @@
 #!/bin/sh
 # update minion
 
+notify_user()
+{
+	# config
+	DISPLAY=":0"
+
+	# execute
+	USER="$(/usr/bin/w -husf|/usr/bin/awk "\$2 == \"${DISPLAY}\" {print \$1; exit 3}")"
+
+	if [ ${?} -eq 3 ]
+	then
+		XAUTHORITY="/home/${USER}/.Xauthority"
+
+		export DISPLAY XAUTHORITY
+
+		/usr/bin/zenity --warning \
+			--text="Grüße Dich,\n\n\ndas System wird gerade aktualisiert.\n\n\nDeshalb ist das Herunterfahren, Neustarten, etc. zur Zeit nicht erlaubt."
+	fi
+}
+
 run_salt()
 {
 	if /sbin/rc-service -qq -e salt-minion
@@ -22,11 +41,10 @@ run_salt()
 
 		if [ $n -lt $m ]
 		then
+			notify_user
+
 			# /etc/inittab: feature 'shutdown -a'
 			# policykit: deny access to its D-Bus connection
-
-			/usr/bin/zenity --warning \
-				--text="Grüße Dich,\n\n\ndas System wird gerade aktualisiert.\n\n\nDeshalb ist das Herunterfahren, Neustarten, etc. zur Zeit nicht erlaubt."
 
 			# deny shutdown/reboot/...
 			touch /etc/shutdown.allow

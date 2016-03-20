@@ -6,7 +6,7 @@ notify_user()
 	# config
 	DISPLAY=":0"
 
-	/usr/bin/w -husf>>/tmp/salt_blub
+	/usr/bin/w >> /tmp/salt_blub
 	# execute
 	USER="$(/usr/bin/w -husf|/usr/bin/awk "\$2 == \"${DISPLAY}\" {print \$1; exit 3}")"
 

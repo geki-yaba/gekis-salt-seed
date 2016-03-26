@@ -23,7 +23,7 @@ notify_user()
 
 run_salt()
 {
-	sleep 60
+	/usr/bin/sleep 60
 
 	if /sbin/rc-service -qq -e salt-minion
 	then

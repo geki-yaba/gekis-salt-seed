@@ -2,9 +2,9 @@
 Name=Inox
 Type=Application
 Comment=Open-source version of Google Chrome web browser
-Exec=inox-browser %U
-TryExec=inox-browser
-Icon=inox-browser
+Exec=chromium-browser %U
+TryExec=chromium-browser
+Icon=chromium-browser
 Categories=Network;WebBrowser;
 MimeType=text/html;text/xml;application/xhtml+xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;x-scheme-handler/mailto;x-scheme-handler/webcal;
-StartupWMClass=inox-browser
+StartupWMClass=chromium-browser

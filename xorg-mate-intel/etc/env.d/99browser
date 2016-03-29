@@ -1,1 +1,1 @@
-BROWSER="/usr/bin/inox-browser"
+BROWSER="/usr/bin/chromium-browser"

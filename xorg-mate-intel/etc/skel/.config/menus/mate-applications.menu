@@ -34,7 +34,7 @@
 		<Layout>
 			<Merge type="menus"/>
 			<Filename>claws-mail.desktop</Filename>
-			<Filename>inox-browser-inox.desktop</Filename>
+			<Filename>chromium-browser-chromium.desktop</Filename>
 			<Filename>deluge.desktop</Filename>
 			<Filename>teamviewer11-teamviewer-11.desktop</Filename>
 			<Merge type="files"/>

@@ -53,7 +53,8 @@ run_salt()
 			touch /etc/shutdown.allow
 			cp /etc/dbus-1/system.d/org.freedesktop.PolicyKit1.conf{.deny,}
 
-			/usr/bin/salt-call state.highstate
+			mkdir -p /var/log/salt
+			/usr/bin/salt-call -l info state.highstate >/var/log/salt/update 2>&1
 
 			# allow shutdown/reboot/...
 			cp /etc/dbus-1/system.d/org.freedesktop.PolicyKit1.conf{.allow,}

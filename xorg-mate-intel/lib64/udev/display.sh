@@ -26,7 +26,6 @@ function select_display()
 		do
 			echo "hdmi: set primary" >> ${LOG} 2>&1
 			/usr/bin/xrandr --output HDMI1 --auto --primary >> ${LOG} 2>&1
-			/usr/bin/xrandr > /dev/null 2>&1
 
 			sleep 2
 		done
@@ -46,7 +45,6 @@ function select_display()
 		do
 			echo "lvds: set primary" >> ${LOG} 2>&1
 			/usr/bin/xrandr --output LVDS1 --auto --primary >> ${LOG} 2>&1
-			/usr/bin/xrandr > /dev/null 2>&1
 
 			sleep 2
 		done
@@ -65,19 +63,16 @@ function select_display()
 }
 
 # execute
-USER="$(/usr/bin/w -husf|/usr/bin/awk "\$2 == \"${DISPLAY}\" {print \$1; exit 3}")"
+USER="$(/usr/bin/w -husf|/usr/bin/awk "\$3 == \"${DISPLAY}\" {print \$1; exit 3}")"
 
 if [ ${?} -eq 3 ]
 then
 	XAUTHORITY="/home/${USER}/.Xauthority"
-	PULSE_RUNTIME_PATH="$(/bin/ls -ld /tmp/pulse-*|/usr/bin/awk "\$3 == \"${USER}\" {print \$9; exit 3}")"
+	PULSE_RUNTIME_PATH="/run/user/$(id -g ${USER})/pulse/"
 
-	if [ ${?} -eq 3 ]
-	then
-		export DISPLAY XAUTHORITY PULSE_RUNTIME_PATH
+	export DISPLAY XAUTHORITY PULSE_RUNTIME_PATH
 
-		select_display
-	fi
+	select_display
 fi
 
 exit 0

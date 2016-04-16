@@ -7,7 +7,7 @@ notify_user()
 	DISPLAY=":0"
 
 	# execute
-	USER="$(/usr/bin/w -husf|/usr/bin/awk "\$2 == \"${DISPLAY}\" {print \$1; exit 3}")"
+	USER="$(/usr/bin/w -husf|/usr/bin/awk "\$3 == \"${DISPLAY}\" {print \$1; exit 3}")"
 
 	if [ ${?} -eq 3 ]
 	then

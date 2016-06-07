@@ -22,40 +22,40 @@ function select_display()
 	case "${mode}"
 	in
 	"hdmi")
-		while [ "disabled" == "$(/bin/cat /sys/class/drm/card0-HDMI-A-1/enabled)" ]
-		do
+		#while [ "disabled" == "$(/bin/cat /sys/class/drm/card0-HDMI-A-1/enabled)" ]
+		#do
 			echo "hdmi: set primary" >> ${LOG} 2>&1
 			/usr/bin/xrandr --output HDMI1 --auto --primary >> ${LOG} 2>&1
 
 			sleep 2
-		done
+		#done
 
-		while [ "enabled" == "$(/bin/cat /sys/class/drm/card0-LVDS-1/enabled)" ]
-		do
+		#while [ "enabled" == "$(/bin/cat /sys/class/drm/card0-LVDS-1/enabled)" ]
+		#do
 			echo "lvds: set off" >> ${LOG} 2>&1
 			/usr/bin/xrandr --output LVDS1 --off >> ${LOG} 2>&1
 
 			sleep 2
-		done
+		#done
 
 		/bin/su ${USER} -c "/usr/bin/pacmd set-card-profile alsa_card.pci-0000_00_1b.0 output:hdmi-stereo+input:analog-stereo" >> ${LOG} 2>&1
 		;;
 	*)
-		while [ "disabled" == "$(/bin/cat /sys/class/drm/card0-LVDS-1/enabled)" ]
-		do
+		#while [ "disabled" == "$(/bin/cat /sys/class/drm/card0-LVDS-1/enabled)" ]
+		#do
 			echo "lvds: set primary" >> ${LOG} 2>&1
 			/usr/bin/xrandr --output LVDS1 --auto --primary >> ${LOG} 2>&1
 
 			sleep 2
-		done
+		#done
 
-		while [ "enabled" == "$(/bin/cat /sys/class/drm/card0-HDMI-A-1/enabled)" ]
-		do
+		#while [ "enabled" == "$(/bin/cat /sys/class/drm/card0-HDMI-A-1/enabled)" ]
+		#do
 			echo "hdmi: set off" >> ${LOG} 2>&1
 			/usr/bin/xrandr --output HDMI1 --off >> ${LOG} 2>&1
 
 			sleep 2
-		done
+		#done
 
 		/bin/su ${USER} -c "/usr/bin/pacmd set-card-profile alsa_card.pci-0000_00_1b.0 output:analog-stereo+input:analog-stereo" >> ${LOG} 2>&1
 		;;

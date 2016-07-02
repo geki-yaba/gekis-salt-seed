@@ -1,8 +1,8 @@
 # ban senseless
->sys-kernel/linux-headers-4.5
-<sys-kernel/linux-headers-4.5
->sys-kernel/gentoo-sources-4.5.1
-<sys-kernel/gentoo-sources-4.5.1
+>sys-kernel/linux-headers-4.6
+<sys-kernel/linux-headers-4.6
+>sys-kernel/gentoo-sources-4.6.3
+<sys-kernel/gentoo-sources-4.6.3
 >=sys-apps/openrc-0.18
 dev-lang/python:3.2
 dev-lang/python:3.4

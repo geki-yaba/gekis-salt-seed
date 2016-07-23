@@ -39,7 +39,7 @@ run_salt()
 
 			/usr/bin/sleep 30
 
-			/usr/bin/true $(( n++ ))
+			/bin/true $(( n++ ))
 		done
 
 		if [ $n -lt $m ]

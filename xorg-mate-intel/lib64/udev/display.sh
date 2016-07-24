@@ -5,7 +5,7 @@
 # - spawn shell script in user context and detach process
 # > then, and only then, xrandr does its magic!
 #
-# ... would anyone be so kind to explain this brlliancy to me?! :-)
+# ... would anyone be so kind as to explain this brilliancy to me?! :-)
 
 # config
 DISPLAY=":0"
@@ -62,6 +62,8 @@ if [ ${?} -eq 3 ]
 then
 	if [ "${UID}" == "$(id -u ${USER})" ]
 	then
+		echo "display switcheroo: spawned user process"
+
 		XAUTHORITY="/home/${USER}/.Xauthority"
 		PULSE_RUNTIME_PATH="/run/user/$(id -g ${USER})/pulse/"
 
@@ -69,7 +71,6 @@ then
 
 		select_display
 	else
-		echo "spawn user process: switcheroo"
 		/bin/su ${USER} -c "/usr/bin/nohup ${0} > /tmp/${USER}_switcheroo 2>&1 &"
 	fi
 fi

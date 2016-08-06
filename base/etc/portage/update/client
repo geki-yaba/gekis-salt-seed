@@ -1,0 +1,53 @@
+#!/bin/sh
+
+function run
+{
+	if [ -n "${@}" ]
+	then
+		echo
+		echo " * executing: ${@}"
+		echo
+
+		${@}
+
+		return ${?}
+	else
+		return -1
+	fi
+}
+
+function die
+{
+	echo " * $@" >&2
+	exit 1
+}
+
+run "emaint sync --auto"
+
+if [ $? -ne 0 ]
+then
+	die "repository synchronisation failed!"
+fi
+
+run "emerge --update --deep --changed-use @world"
+
+if [ $? -ne 0 ]
+then
+	die "system update failed!"
+fi
+
+run "emerge --depclean"
+
+if [ $? -ne 0 ]
+then
+	die "package cleanup failed!"
+fi
+
+run "eclean-pkg --deep"
+
+if [ $? -ne 0 ]
+then
+	die "binary package cleanup failed!"
+fi
+
+exit 0

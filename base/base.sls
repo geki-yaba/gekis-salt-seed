@@ -8,6 +8,12 @@
     - source: salt://etc/cron.daily/salt
     - mode: 755
 
+/etc/portage/update/client:
+  file.managed:
+    - source: salt://etc/portage/update/client
+    - mode: 750
+    - makedirs: True
+
 /etc/mtab:
   file.symlink:
     - target: /proc/self/mounts
@@ -16,14 +22,6 @@
   file.directory:
     - makedirs: True
 
-emaint:
+eupdate:
   cmd.run:
-    - name: emaint sync -a
-
-emerge-depclean:
-  cmd.run:
-    - name: emerge --depclean
-
-eclean-pkg-deep:
-  cmd.run:
-    - name: eclean-pkg --deep
+    - name: /etc/portage/update/client

@@ -29,6 +29,12 @@ then
 	die "repository synchronisation failed!"
 fi
 
+pushd /usr/local/src/mate-fork.git
+run "git fetch --all"
+run "git pull origin downstream"
+run "git checkout downstream"
+popd
+
 run "emerge --update --deep --changed-use @world"
 
 if [ $? -ne 0 ]

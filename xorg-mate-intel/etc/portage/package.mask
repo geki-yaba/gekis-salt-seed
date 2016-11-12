@@ -1,6 +1,6 @@
 # ban senseless
->sys-kernel/linux-headers-4.8.3
-<sys-kernel/linux-headers-4.8.3
+>sys-kernel/linux-headers-4.8
+<sys-kernel/linux-headers-4.8
 >sys-kernel/gentoo-sources-4.8.3
 <sys-kernel/gentoo-sources-4.8.3
 >=sys-apps/openrc-0.18

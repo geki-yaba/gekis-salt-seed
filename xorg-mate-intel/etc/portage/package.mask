@@ -8,5 +8,4 @@ media-libs/gstreamer:0.10
 app-office/libreoffice::gentoo
 dev-libs/boost::gentoo
 www-client/chromium::gentoo
-www-plugins/chrome-binary-plugins::gentoo
 xfce-base/exo

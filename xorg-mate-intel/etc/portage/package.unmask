@@ -2,12 +2,4 @@
 dev-libs/boost
 
 # libreoffice
-<app-office/libreoffice-5.3.9999
-
-# wine
-app-eselect/eselect-wine
-app-emulation/wine-desktop-common
-app-emulation/wine-gecko
-app-emulation/wine-mono
-app-emulation/wine-vanilla
-virtual/wine
+#<app-office/libreoffice-5.3.9999

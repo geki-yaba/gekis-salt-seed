@@ -25,3 +25,4 @@
 eupdate:
   cmd.run:
     - name: /etc/portage/update/client
+    - output_loglevel: info

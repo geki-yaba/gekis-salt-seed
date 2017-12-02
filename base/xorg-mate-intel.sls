@@ -20,4 +20,4 @@
 
 /etc/portage/make.profile:
   file.symlink:
-    - target: ../../usr/portage/profiles/default/linux/amd64/13.0
+    - target: ../../usr/portage/profiles/default/linux/amd64/17.0

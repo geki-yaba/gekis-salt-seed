@@ -24,10 +24,10 @@ function package_kernel()
 	cp .config /boot/config-${version}-${cpu_type}
 
 	tar cJf ${DISTDIR}/${cpu_type}-kernel-bin${cpu_arch}-${version}.tar.xz \
+		--exclude=video \
 		/boot/config-${version}-${cpu_type} \
 		/boot/kernel-${version}-${cpu_type} \
 		/lib/modules/${version}-gentoo/ \
-		--exclude=video
 
 	if [ -d ${OVERLAY}/sys-kernel/${cpu_type}-kernel-bin${cpu_arch} ] &&
 	   [ -f ${OVERLAY}/sys-kernel/${cpu_type}-kernel-bin${cpu_arch}/${cpu_type}-kernel-bin${cpu_arch}-${version}.ebuild ]

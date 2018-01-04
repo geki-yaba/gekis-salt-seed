@@ -9,8 +9,11 @@ function package_kernel()
 	local version="${PWD}"
 
 	# strip to version (gentoo-sources)
+	version="${version%-r*}"
 	version="${version%-*}"
 	version="${version#*-}"
+
+	echo "version: ${version}"
 
 	local cpu_name="${0#*-}"
 	local cpu_type="${cpu_name%_*}"

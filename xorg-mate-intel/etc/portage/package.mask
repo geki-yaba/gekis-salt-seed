@@ -1,8 +1,8 @@
 # ban senseless
 >sys-kernel/linux-headers-4.14.2
 <sys-kernel/linux-headers-4.14.2
->sys-kernel/gentoo-sources-4.14.11-r2
-<sys-kernel/gentoo-sources-4.14.11-r2
+>sys-kernel/gentoo-sources-4.14.15
+<sys-kernel/gentoo-sources-4.14.15
 >=sys-apps/openrc-0.18
 media-libs/gstreamer:0.10
 app-office/libreoffice::gentoo

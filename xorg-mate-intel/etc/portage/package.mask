@@ -12,3 +12,4 @@ www-plugins/chrome-binary-plugins:beta
 www-plugins/chrome-binary-plugins:unstable
 xfce-base/exo
 >=dev-libs/libcdio-1.1.0
+=x11-base/xorg-server-1.19.99*

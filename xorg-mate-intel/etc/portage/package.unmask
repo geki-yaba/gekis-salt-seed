@@ -1,7 +1,4 @@
 # boost
 dev-libs/boost
 
-=x11-base/xorg-server-1.19.99.902
-
-# libreoffice
-#<app-office/libreoffice-5.3.9999
+=x11-base/xorg-server-1.19.99.903

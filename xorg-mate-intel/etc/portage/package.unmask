@@ -9,4 +9,4 @@ dev-libs/boost
 media-video/ffmpeg:0/56.58.58
 
 # libressl
-dev-libs/libressl:0/46
+dev-libs/libressl:0/47

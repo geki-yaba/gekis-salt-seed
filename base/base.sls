@@ -24,4 +24,4 @@
 
 eupdate:
   cmd.run:
-    - name: /etc/portage/update/client
+    - name: /etc/portage/update/client >/var/log/salt/client 2>&1
